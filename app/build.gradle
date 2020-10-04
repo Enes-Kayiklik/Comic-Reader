@@ -84,4 +84,8 @@ dependencies {
 
     // File Loader
     implementation 'com.github.kk121:File-Loader:1.2'
+
+    // Lottie
+    def lottieVersion = "3.4.4"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

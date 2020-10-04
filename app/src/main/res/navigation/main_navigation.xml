@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.eneskayiklik.comicreader.ui.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_bookShelfFragment"
+            app:destination="@id/bookShelfFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookShelfFragment"
+        android:name="com.eneskayiklik.comicreader.ui.bookshelf.BookShelfFragment"
+        android:label="BookShelfFragment">
+        <action
+            android:id="@+id/action_bookShelfFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.eneskayiklik.comicreader.ui.bookshelf.detail.BookDetailFragment"
+        android:label="BookDetailFragment">
+        <action
+            android:id="@+id/action_bookDetailFragment_to_readBookFragment"
+            app:destination="@id/readBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readBookFragment"
+        android:name="com.eneskayiklik.comicreader.ui.bookshelf.read.ReadBookFragment"
+        android:label="ReadBookFragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.eneskayiklik.comicreader.ui.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" />
+</navigation>
