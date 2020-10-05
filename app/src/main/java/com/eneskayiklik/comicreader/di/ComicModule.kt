@@ -5,8 +5,6 @@ import com.eneskayiklik.comicreader.utils.Constants.BOOK_COLLECTION
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.krishna.fileloader.FileLoader
-import com.krishna.fileloader.builder.FileLoaderBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,8 +22,6 @@ object ComicModule {
 
     @Singleton
     @Provides
-    fun provideFileLoader(
-        @ApplicationContext context: Context
-    ): FileLoaderBuilder =
-        FileLoader.with(context)
+    fun providePdfPath(@ApplicationContext context: Context): String? =
+        context.getExternalFilesDir("Comic Books")?.absolutePath
 }

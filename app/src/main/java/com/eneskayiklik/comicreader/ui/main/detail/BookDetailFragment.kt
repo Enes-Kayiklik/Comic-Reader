@@ -28,6 +28,8 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     private fun setupData() {
         val currentBook = navArgs.currentBook
-        imgBookDetailPoster.load(currentBook.posterUrl)
+        imgBookDetail.load(currentBook.iconUrl)
+        tvBookDetailAuthor.text = currentBook.authorName
+        tvBookDetailName.text = currentBook.name
     }
 }

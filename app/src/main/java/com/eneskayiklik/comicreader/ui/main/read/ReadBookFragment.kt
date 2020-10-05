@@ -24,11 +24,20 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
     private fun setupObserver() {
         redBookViewModel.file.observe(this.viewLifecycleOwner, Observer {
             changeLayoutVisibilities()
-            pdfView.fromFile(it)
+            pdfView.fromUri(it)
                 .pageFling(true)
                 .swipeHorizontal(true)
                 .pageSnap(true)
                 .load()
+        })
+
+        redBookViewModel.progress.observe(this.viewLifecycleOwner, Observer {
+            val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
+            val currentByte = (it.currentBytes / 1000).toInt()
+            val totalByte = (it.totalBytes / 1000).toInt()
+            progressBarDownloadState.progress = totalPercent
+            tvProcessPercent.text = "$totalPercent".plus(" %")
+            tvProcessPercentText.text = "$currentByte".plus(" mb / $totalByte mb")
         })
     }
 
@@ -39,6 +48,10 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
 
     override fun onStart() {
         super.onStart()
-        redBookViewModel.loadBookData(navArgs.currentBook.bookUrl)
+        redBookViewModel.getBookData(
+            navArgs.currentBook.bookUrl,
+            navArgs.currentBook.name,
+            this.requireContext()
+        )
     }
 }

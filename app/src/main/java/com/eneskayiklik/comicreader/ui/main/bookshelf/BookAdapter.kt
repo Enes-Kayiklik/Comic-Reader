@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.request.CachePolicy
 import com.eneskayiklik.comicreader.R
 import com.eneskayiklik.comicreader.model.book.Book
 import kotlinx.android.synthetic.main.one_row_book.view.*
@@ -26,6 +27,7 @@ class BookAdapter(
         holder.itemView.apply {
             imgBook.load(currentBook.iconUrl) {
                 crossfade(true)
+                diskCachePolicy(CachePolicy.READ_ONLY)
             }
             tvBookName.text = currentBook.name
             tvAuthorName.text = currentBook.authorName
