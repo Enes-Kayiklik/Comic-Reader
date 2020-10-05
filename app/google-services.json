@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "813439902692",
+    "firebase_url": "https://comic-reader-7badc.firebaseio.com",
+    "project_id": "comic-reader-7badc",
+    "storage_bucket": "comic-reader-7badc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813439902692:android:f0230d7c587a16083e1df1",
+        "android_client_info": {
+          "package_name": "com.eneskayiklik.comicreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813439902692-6bc93sgnd7e3lb4s0853aolmg2co4bh1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eneskayiklik.comicreader",
+            "certificate_hash": "407a318c1d8fe0a8d21f49f41004310636fd309f"
+          }
+        },
+        {
+          "client_id": "813439902692-qukkktpe1nl6fff21iegb57emc32fb8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6TBvnZkA7Ja3ugZHKNv3Td6e2_A4wY4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813439902692-qukkktpe1nl6fff21iegb57emc32fb8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,4 +2,5 @@
     <string name="app_name">Comic Reader</string>
     <string name="bookshelf">Bookshelf</string>
     <string name="favorite">Favorite</string>
+    <string name="desc">desc</string>
 </resources>

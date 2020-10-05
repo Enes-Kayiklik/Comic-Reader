@@ -10,11 +10,13 @@
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_bookShelfFragment"
-            app:destination="@id/bookShelfFragment" />
+            app:destination="@id/bookShelfFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/bookShelfFragment"
-        android:name="com.eneskayiklik.comicreader.ui.bookshelf.BookShelfFragment"
+        android:name="com.eneskayiklik.comicreader.ui.main.bookshelf.BookShelfFragment"
         android:label="BookShelfFragment">
         <action
             android:id="@+id/action_bookShelfFragment_to_bookDetailFragment"
@@ -22,16 +24,23 @@
     </fragment>
     <fragment
         android:id="@+id/bookDetailFragment"
-        android:name="com.eneskayiklik.comicreader.ui.bookshelf.detail.BookDetailFragment"
+        android:name="com.eneskayiklik.comicreader.ui.main.detail.BookDetailFragment"
         android:label="BookDetailFragment">
         <action
             android:id="@+id/action_bookDetailFragment_to_readBookFragment"
             app:destination="@id/readBookFragment" />
+        <argument
+            android:name="currentBook"
+            app:argType="com.eneskayiklik.comicreader.model.book.Book" />
     </fragment>
     <fragment
         android:id="@+id/readBookFragment"
-        android:name="com.eneskayiklik.comicreader.ui.bookshelf.read.ReadBookFragment"
-        android:label="ReadBookFragment" />
+        android:name="com.eneskayiklik.comicreader.ui.main.read.ReadBookFragment"
+        android:label="ReadBookFragment">
+        <argument
+            android:name="currentBook"
+            app:argType="com.eneskayiklik.comicreader.model.book.Book" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.eneskayiklik.comicreader.ui.favorite.FavoriteFragment"
