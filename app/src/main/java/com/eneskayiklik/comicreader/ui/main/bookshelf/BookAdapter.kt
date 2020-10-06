@@ -27,6 +27,7 @@ class BookAdapter(
         holder.itemView.apply {
             imgBook.load(currentBook.iconUrl) {
                 crossfade(true)
+                placeholder(R.drawable.ic_placeholder)
                 diskCachePolicy(CachePolicy.READ_ONLY)
             }
             tvBookName.text = currentBook.name

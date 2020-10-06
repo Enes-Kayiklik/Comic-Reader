@@ -45,4 +45,8 @@
         android:id="@+id/favoriteFragment"
         android:name="com.eneskayiklik.comicreader.ui.favorite.FavoriteFragment"
         android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.eneskayiklik.comicreader.ui.main.download.DownloadFragment"
+        android:label="DownloadFragment" />
 </navigation>

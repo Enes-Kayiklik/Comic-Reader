@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Comic Reader</string>
+
+    <string name="downloadFolder">İndirme Başarılı!\n Internal storage/Android/data/com.eneskayiklik.comicreader/files/Comic Books \n Klasörüne kaydedildi</string>
     <string name="bookshelf">Bookshelf</string>
     <string name="favorite">Favorite</string>
     <string name="desc">desc</string>
+    <string name="overview">İnceleme</string>
+    <string name="download">Download</string>
 </resources>

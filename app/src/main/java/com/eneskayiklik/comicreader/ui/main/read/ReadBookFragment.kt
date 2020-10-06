@@ -33,8 +33,8 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
 
         redBookViewModel.progress.observe(this.viewLifecycleOwner, Observer {
             val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
-            val currentByte = (it.currentBytes / 1000).toInt()
-            val totalByte = (it.totalBytes / 1000).toInt()
+            val currentByte = (it.currentBytes / 1_000_000).toInt()
+            val totalByte = (it.totalBytes / 1_000_000).toInt()
             progressBarDownloadState.progress = totalPercent
             tvProcessPercent.text = "$totalPercent".plus(" %")
             tvProcessPercentText.text = "$currentByte".plus(" mb / $totalByte mb")

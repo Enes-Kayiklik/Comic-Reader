@@ -13,6 +13,7 @@ import com.downloader.Error
 import com.downloader.OnDownloadListener
 import com.downloader.PRDownloader
 import com.downloader.Progress
+import com.eneskayiklik.comicreader.utils.Variables.downloadCount
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,11 +40,13 @@ class ReadBookViewModel @ViewModelInject constructor(
     }
 
     private fun downloadPdf(url: String, name: String, context: Context) {
+        downloadCount.postValue(downloadCount.value?.plus(1))
         CoroutineScope(Dispatchers.IO).launch {
             PRDownloader.download(url, pdfPath, "$name.pdf")
                 .build().setOnProgressListener { progress -> _progress.postValue(progress) }
                 .start(object : OnDownloadListener {
                     override fun onDownloadComplete() {
+                        downloadCount.postValue(downloadCount.value?.minus(1))
                         val fileUri = FileProvider.getUriForFile(
                             context,
                             "com.eneskayiklik.comicreader",
