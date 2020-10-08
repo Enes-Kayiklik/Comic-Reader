@@ -32,6 +32,9 @@
         <argument
             android:name="currentBook"
             app:argType="com.eneskayiklik.comicreader.model.book.Book" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/readBookFragment"
@@ -49,4 +52,23 @@
         android:id="@+id/downloadFragment"
         android:name="com.eneskayiklik.comicreader.ui.main.download.DownloadFragment"
         android:label="DownloadFragment" />
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.eneskayiklik.comicreader.ui.main.detail.comment.CommentsFragment"
+        android:label="CommentsFragment">
+        <action
+            android:id="@+id/action_commentsFragment_to_addCommentFragment"
+            app:destination="@id/addCommentFragment" />
+        <argument
+            android:name="currentBook"
+            app:argType="com.eneskayiklik.comicreader.model.book.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCommentFragment"
+        android:name="com.eneskayiklik.comicreader.ui.main.detail.comment.AddCommentFragment"
+        android:label="AddCommentFragment">
+        <argument
+            android:name="currentBook"
+            app:argType="com.eneskayiklik.comicreader.model.book.Book" />
+    </fragment>
 </navigation>

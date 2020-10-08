@@ -51,6 +51,13 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
             }
         }
 
+        btnDetailSeeComments.setOnClickListener {
+            val action = BookDetailFragmentDirections.actionBookDetailFragmentToCommentsFragment(
+                currentBook = navArgs.currentBook
+            )
+            findNavController().navigate(action)
+        }
+
         icBack.setOnClickListener {
             this.requireActivity().onBackPressed()
         }
@@ -82,13 +89,15 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
         imgBookDetail.load(currentBook.iconUrl)
         tvBookDetailAuthor.text = currentBook.authorName
         tvBookDetailName.text = currentBook.name
-        tvBookDetailPageCount.text = "${currentBook.pageCount}".plus(" Sayfa")
-        ratingBar.rating = currentBook.rating
+        ratingBar.rating = currentBook.rating / currentBook.reviewCount
         tvDetailDesc.text = currentBook.desc
+        tvBookDetailReviewCount.text = "${currentBook.reviewCount}".plus(" İnceleme")
+        tvBookDetailPageCount.text = "${currentBook.pageCount}".plus(" Sayfa")
     }
 
     override fun onStart() {
         super.onStart()
+        // If selected item currently downloading  than show download progress bar to user
         downloadingItems.value?.get(navArgs.currentBook.name)?.let {
             progressBarDetailDownload.makeVisible()
         }

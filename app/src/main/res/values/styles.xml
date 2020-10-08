@@ -5,6 +5,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorStraw</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/colorStraw</item>
     </style>
 
     <style name="ButtonPrimary" parent="Widget.AppCompat.Button">
@@ -33,6 +36,14 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SmallText" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto_thin</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
 </resources>

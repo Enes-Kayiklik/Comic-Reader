@@ -10,6 +10,8 @@ data class Book(
     val name: String = "",
     val desc: String = "",
     val authorName: String = "",
+    val docId: String = "",
     val pageCount: Int = 0,
+    val reviewCount: Int = 0,
     val rating: Float = 0F
 ) : Parcelable

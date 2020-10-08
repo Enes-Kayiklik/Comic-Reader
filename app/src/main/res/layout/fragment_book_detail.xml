@@ -67,6 +67,15 @@
                 android:numStars="5"
                 app:layout_constraintStart_toStartOf="@+id/tvBookDetailPageCount"
                 app:layout_constraintTop_toBottomOf="@+id/tvBookDetailPageCount" />
+
+            <TextView
+                android:id="@+id/tvBookDetailReviewCount"
+                style="@style/SmallText"
+                android:layout_marginStart="4dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -127,6 +136,7 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -135,38 +145,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutButtons">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
                 style="@style/TitleText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/overview"
-                app:layout_constraintEnd_toEndOf="@+id/constraintLayoutButtons"
-                app:layout_constraintStart_toStartOf="@+id/constraintLayoutButtons"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutButtons" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvDetailDesc"
                 style="@style/SubText"
+                android:layout_width="0dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
                 android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <Button
                 android:id="@+id/btnDetailSeeComments"
                 style="@style/ButtonPrimary"
-                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:text="Comments"
-                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvDetailDesc"
                 app:layout_constraintStart_toStartOf="@+id/tvDetailDesc"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailDesc" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <ImageView
