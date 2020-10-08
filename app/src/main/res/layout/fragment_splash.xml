@@ -5,12 +5,10 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimation"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/book"
-        app:lottie_speed="4" />
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_book" />
 </LinearLayout>

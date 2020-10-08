@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.eneskayiklik.comicreader.R
 import com.eneskayiklik.comicreader.utils.Functions.makeInvisible
 import com.eneskayiklik.comicreader.utils.Functions.makeVisible
+import com.eneskayiklik.comicreader.utils.Variables
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_read_book.*
 
@@ -31,13 +32,16 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
                 .load()
         })
 
-        redBookViewModel.progress.observe(this.viewLifecycleOwner, Observer {
-            val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
-            val currentByte = (it.currentBytes / 1_000_000).toInt()
-            val totalByte = (it.totalBytes / 1_000_000).toInt()
-            progressBarDownloadState.progress = totalPercent
-            tvProcessPercent.text = "$totalPercent".plus(" %")
-            tvProcessPercentText.text = "$currentByte".plus(" mb / $totalByte mb")
+        // Show user download progress
+        Variables.downloadingItems.observe(this.viewLifecycleOwner, Observer { item ->
+            item[navArgs.currentBook.name]?.let {
+                val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
+                val currentByte = (it.currentBytes / 1_000_000).toInt()
+                val totalByte = (it.totalBytes / 1_000_000).toInt()
+                progressBarDownloadState.progress = totalPercent
+                tvProcessPercent.text = "$totalPercent".plus(" %")
+                tvProcessPercentText.text = "$currentByte".plus(" mb / $totalByte mb")
+            }
         })
     }
 
@@ -48,10 +52,13 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
 
     override fun onStart() {
         super.onStart()
-        redBookViewModel.getBookData(
-            navArgs.currentBook.bookUrl,
-            navArgs.currentBook.name,
-            this.requireContext()
-        )
+        // If book currently downloading than show progressbar
+        if (Variables.downloadingItems.value?.get(navArgs.currentBook.name) == null) {
+            redBookViewModel.getBookData(
+                navArgs.currentBook.bookUrl,
+                navArgs.currentBook.name,
+                this.requireContext()
+            )
+        }
     }
 }

@@ -12,7 +12,7 @@ import com.eneskayiklik.comicreader.model.book.Book
 import kotlinx.android.synthetic.main.one_row_book.view.*
 
 class BookAdapter(
-    private val bookList: List<Book>
+    var bookList: List<Book>
 ) : RecyclerView.Adapter<BookAdapter.CustomViewHolder>() {
     override fun getItemCount() = bookList.size
 

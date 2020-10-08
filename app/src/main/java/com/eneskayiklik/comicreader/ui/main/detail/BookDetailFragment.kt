@@ -11,7 +11,9 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import com.eneskayiklik.comicreader.R
 import com.eneskayiklik.comicreader.ui.main.read.ReadBookViewModel
+import com.eneskayiklik.comicreader.utils.Functions.makeInvisible
 import com.eneskayiklik.comicreader.utils.Functions.makeVisible
+import com.eneskayiklik.comicreader.utils.Variables.downloadingItems
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_book_detail.*
 
@@ -63,12 +65,15 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                 resources.getString(R.string.downloadFolder),
                 Toast.LENGTH_LONG
             ).show()
+            progressBarDetailDownload.makeInvisible()
         })
 
         // Show user download progress
-        redBookViewModel.progress.observe(this.viewLifecycleOwner, Observer {
-            val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
-            progressBarDetailDownload.progress = totalPercent
+        downloadingItems.observe(this.viewLifecycleOwner, Observer { item ->
+            item[navArgs.currentBook.name]?.let {
+                val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
+                progressBarDetailDownload.progress = totalPercent
+            }
         })
     }
 
@@ -80,5 +85,12 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
         tvBookDetailPageCount.text = "${currentBook.pageCount}".plus(" Sayfa")
         ratingBar.rating = currentBook.rating
         tvDetailDesc.text = currentBook.desc
+    }
+
+    override fun onStart() {
+        super.onStart()
+        downloadingItems.value?.get(navArgs.currentBook.name)?.let {
+            progressBarDetailDownload.makeVisible()
+        }
     }
 }

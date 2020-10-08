@@ -11,7 +11,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     private lateinit var countDownTimer: CountDownTimer
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        countDownTimer = object : CountDownTimer(1800L, 1000L) {
+        countDownTimer = object : CountDownTimer(750L, 1000L) {
             override fun onFinish() {
                 findNavController().navigate(R.id.action_splashFragment_to_bookShelfFragment)
             }
