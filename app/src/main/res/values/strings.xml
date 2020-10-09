@@ -7,4 +7,20 @@
     <string name="desc">desc</string>
     <string name="overview">İnceleme</string>
     <string name="download">Download</string>
+    <string name="search_for_comic_books">Search for comic books</string>
+    <string name="textview">TextView</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="read">Read</string>
+    <string name="comments">Comments</string>
+    <string name="constructing">Yapım Aşamasında</string>
+    <string name="comic_downloading">Roman İndiriliyor</string>
+    <string name="zero_percent">0 %</string>
+    <string name="dash">-</string>
+    <string name="order_by_review">Puana Göre Sırala</string>
+    <string name="name_surname">İsim Soyisim</string>
+    <string name="long_desc_hint">Çizgi Roman Hakkındaki İncelemenizi Buraya Yazabilirsiniz.</string>
+    <string name="anonim">Anonim</string>
+    <string name="share_review">İncelemeyi Paylaş</string>
+    <string name="write_review">İncelemenizi Yazın</string>
+    <string name="max_char">400</string>
 </resources>

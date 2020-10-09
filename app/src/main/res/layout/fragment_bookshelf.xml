@@ -17,9 +17,37 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarBookshelfFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:menu="@menu/search_menu"
-                app:title="Comicbook" />
+                android:layout_height="wrap_content"
+                android:background="@color/colorStraw"
+                app:menu="@menu/search_menu">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtSearchView"
+                        style="@style/SubText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/btn_primary_back"
+                        android:drawableEnd="@drawable/ic_search"
+                        android:elevation="2dp"
+                        android:hint="@string/search_for_comic_books"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,5 +64,6 @@
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/book"
         android:layout_gravity="center"
+        android:visibility="gone"
         app:lottie_repeatCount="100" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -16,12 +16,12 @@
         android:id="@+id/tvBookName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book Name" />
+        android:text="@string/textview" />
 
     <TextView
         android:id="@+id/tvAuthorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Author Name" />
+        android:text="@string/textview" />
 
 </LinearLayout>

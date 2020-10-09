@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:elevation="8dp"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/desc"
         app:layout_constraintTop_toBottomOf="@+id/icBack" />
 
     <androidx.cardview.widget.CardView
@@ -38,14 +39,14 @@
                 style="@style/TitleText"
                 android:layout_marginStart="86dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvBookDetailAuthor"
                 style="@style/SubText"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="@+id/tvBookDetailName"
                 app:layout_constraintTop_toBottomOf="@+id/tvBookDetailName" />
 
@@ -53,7 +54,7 @@
                 android:id="@+id/tvBookDetailPageCount"
                 style="@style/SubText"
                 android:layout_marginTop="2dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="@+id/tvBookDetailAuthor"
                 app:layout_constraintTop_toBottomOf="@+id/tvBookDetailAuthor" />
 
@@ -68,7 +69,7 @@
                 android:id="@+id/tvBookDetailReviewCount"
                 style="@style/SmallText"
                 android:layout_marginStart="4dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
                 app:layout_constraintStart_toEndOf="@+id/ratingBar"
                 app:layout_constraintTop_toTopOf="@+id/ratingBar" />
@@ -90,7 +91,7 @@
             style="@style/ButtonPrimary"
             android:layout_width="110dp"
             android:layout_marginStart="16dp"
-            android:text="Bookmark"
+            android:text="@string/bookmark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +100,7 @@
             android:id="@+id/btnReadBook"
             style="@style/ButtonPrimary"
             android:layout_width="110dp"
-            android:text="Read"
+            android:text="@string/read"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnDetailDownload"
             app:layout_constraintStart_toEndOf="@+id/button"
@@ -110,7 +111,7 @@
             style="@style/ButtonPrimary"
             android:layout_width="110dp"
             android:layout_marginEnd="16dp"
-            android:text="Download"
+            android:text="@string/download"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -161,7 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -171,7 +172,7 @@
                 style="@style/ButtonPrimary"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="Comments"
+                android:text="@string/comments"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvDetailDesc"
                 app:layout_constraintStart_toStartOf="@+id/tvDetailDesc"
@@ -188,6 +189,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
+        android:contentDescription="@string/desc"
         app:tint="@color/colorBlack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

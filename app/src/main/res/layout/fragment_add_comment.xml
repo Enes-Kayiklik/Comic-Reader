@@ -14,10 +14,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="İsim Soyisim"
+        android:hint="@string/name_surname"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/switchIsAnonim"
         app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatRatingBar
@@ -48,10 +49,11 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="start|top"
-            android:hint="Çizgi Roman Hakkındaki İncelemenizi Buraya Yazabilirsiniz."
+            android:hint="@string/long_desc_hint"
             android:inputType="textMultiLine"
             android:lines="10"
             android:maxLength="400"
+            android:importantForAutofill="no"
             android:padding="4dp" />
     </androidx.cardview.widget.CardView>
 
@@ -61,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Anonim"
+        android:text="@string/anonim"
         app:layout_constraintBottom_toBottomOf="@+id/edtNameSurname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edtNameSurname" />
@@ -72,7 +74,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="İncelemeyi Paylaş"
+        android:text="@string/share_review"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -83,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="İncelemenizi Yazın"
+        android:text="@string/write_review"
         app:layout_constraintStart_toStartOf="@+id/edtNameSurname"
         app:layout_constraintTop_toBottomOf="@+id/edtNameSurname" />
 
@@ -91,7 +93,7 @@
         android:id="@+id/tvCharReduce"
         style="@style/SubText"
         android:layout_marginBottom="2dp"
-        android:text="400"
+        android:text="@string/max_char"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

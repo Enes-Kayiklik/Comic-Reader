@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Roman İndiriliyor" />
+            android:text="@string/comic_downloading" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="75dp"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="0 %" />
+                android:text="@string/zero_percent" />
 
             <TextView
                 android:id="@+id/tvProcessPercentText"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="0 mb / 150 mb" />
+                android:text="@string/dash" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
