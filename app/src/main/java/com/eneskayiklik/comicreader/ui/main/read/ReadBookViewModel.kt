@@ -56,6 +56,7 @@ class ReadBookViewModel @ViewModelInject constructor(
                             PACKAGE_NAME,
                             File("$pdfPath/$name.pdf")
                         )
+                        Log.e(TAG, "$fileUri")
                         _file.postValue(fileUri)
                     }
 

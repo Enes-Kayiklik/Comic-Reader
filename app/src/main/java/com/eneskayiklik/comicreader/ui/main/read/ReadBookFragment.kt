@@ -1,7 +1,6 @@
 package com.eneskayiklik.comicreader.ui.main.read
 
-import android.os.Bundle
-import android.view.View
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -17,10 +16,6 @@ import kotlinx.android.synthetic.main.fragment_read_book.*
 class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
     private val navArgs by navArgs<ReadBookFragmentArgs>()
     private val redBookViewModel: ReadBookViewModel by viewModels()
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupObserver()
-    }
 
     private fun setupObserver() {
         redBookViewModel.file.observe(this.viewLifecycleOwner, Observer {
@@ -48,10 +43,12 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
     private fun changeLayoutVisibilities() {
         loadingViewRead.makeInvisible()
         containerViewRead.makeVisible()
+        Log.e("Read Book VM", "changeLayoutVisibilities")
     }
 
     override fun onStart() {
         super.onStart()
+        setupObserver()
         // If book currently downloading than show progressbar
         if (Variables.downloadingItems.value?.get(navArgs.currentBook.name) == null) {
             redBookViewModel.getBookData(

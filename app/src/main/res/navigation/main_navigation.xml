@@ -12,6 +12,10 @@
             android:id="@+id/action_splashFragment_to_bookShelfFragment"
             app:destination="@id/bookShelfFragment"
             app:popUpTo="@id/splashFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_left"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -20,7 +24,11 @@
         android:label="BookShelfFragment">
         <action
             android:id="@+id/action_bookShelfFragment_to_bookDetailFragment"
-            app:destination="@id/bookDetailFragment" />
+            app:destination="@id/bookDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_left" />
     </fragment>
     <fragment
         android:id="@+id/bookDetailFragment"
@@ -28,13 +36,21 @@
         android:label="BookDetailFragment">
         <action
             android:id="@+id/action_bookDetailFragment_to_readBookFragment"
-            app:destination="@id/readBookFragment" />
+            app:destination="@id/readBookFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_left" />
         <argument
             android:name="currentBook"
             app:argType="com.eneskayiklik.comicreader.model.book.Book" />
         <action
             android:id="@+id/action_bookDetailFragment_to_commentsFragment"
-            app:destination="@id/commentsFragment" />
+            app:destination="@id/commentsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_left" />
     </fragment>
     <fragment
         android:id="@+id/readBookFragment"
@@ -58,7 +74,11 @@
         android:label="CommentsFragment">
         <action
             android:id="@+id/action_commentsFragment_to_addCommentFragment"
-            app:destination="@id/addCommentFragment" />
+            app:destination="@id/addCommentFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/to_right"
+            app:popExitAnim="@anim/from_left" />
         <argument
             android:name="currentBook"
             app:argType="com.eneskayiklik.comicreader.model.book.Book" />

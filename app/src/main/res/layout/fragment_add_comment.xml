@@ -8,18 +8,18 @@
         android:id="@+id/edtNameSurname"
         style="@style/SubText"
         android:layout_width="0dp"
-        android:maxLength="15"
-        android:maxLines="1"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/name_surname"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/switchIsAnonim"
-        app:layout_constraintStart_toStartOf="parent"
         android:importantForAutofill="no"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/switchIsAnonim"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <androidx.appcompat.widget.AppCompatRatingBar
         android:id="@+id/ratingReview"
@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="@string/anonim"
+        android:backgroundTint="@color/colorButtonTintDark"
         app:layout_constraintBottom_toBottomOf="@+id/edtNameSurname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edtNameSurname" />
@@ -96,4 +97,28 @@
         android:text="@string/max_char"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/desc"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_review"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

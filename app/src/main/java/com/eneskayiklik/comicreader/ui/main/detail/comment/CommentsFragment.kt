@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.eneskayiklik.comicreader.R
+import com.eneskayiklik.comicreader.utils.Functions.makeInvisible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_comments.*
 
@@ -23,7 +24,10 @@ class CommentsFragment : Fragment(R.layout.fragment_comments) {
 
     private fun setupObserver() {
         commentViewModel.comments.observe(this.viewLifecycleOwner, Observer {
-            recyclerViewComments.adapter = CommentAdapter(it)
+            if (it.isNotEmpty()) {
+                layoutEmptyComment.makeInvisible()
+                recyclerViewComments.adapter = CommentAdapter(it)
+            }
         })
     }
 
@@ -33,6 +37,10 @@ class CommentsFragment : Fragment(R.layout.fragment_comments) {
                 currentBook = navArgs.currentBook
             )
             findNavController().navigate(action)
+        }
+
+        btnBack.setOnClickListener {
+            this.requireActivity().onBackPressed()
         }
     }
 

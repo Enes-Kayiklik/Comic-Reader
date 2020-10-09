@@ -23,4 +23,9 @@
     <string name="share_review">İncelemeyi Paylaş</string>
     <string name="write_review">İncelemenizi Yazın</string>
     <string name="max_char">400</string>
+    <string name="no_review_yet">Henüz İnceleme Yapılmamış</string>
+    <string name="be_the_first">İlk İncelemeyi Yapan Sen Ol !</string>
+    <string name="reviews">İncelemeler</string>
+    <string name="detail">Detay</string>
+    <string name="add_review">İnceleme Ekle</string>
 </resources>

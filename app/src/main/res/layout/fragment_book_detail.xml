@@ -184,12 +184,22 @@
         android:id="@+id/icBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/desc"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
-        android:contentDescription="@string/desc"
         app:tint="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TitleText"
+        android:text="@string/detail"
+        app:layout_constraintBottom_toBottomOf="@+id/icBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icBack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
