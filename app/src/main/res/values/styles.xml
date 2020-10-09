@@ -46,4 +46,12 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:numStars">5</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:isIndicator">true</item>
+        <item name="android:progressTint">@color/colorDuskYellow</item>
+    </style>
+
 </resources>

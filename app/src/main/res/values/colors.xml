@@ -8,4 +8,5 @@
     <color name="colorBlack">#000</color>
     <color name="colorGrey">#B3000000</color>
     <color name="colorStraw">#FFFFFC</color>
+    <color name="colorDuskYellow">#FFC922</color>
 </resources>

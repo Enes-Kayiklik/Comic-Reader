@@ -3,6 +3,7 @@ package com.eneskayiklik.comicreader.ui.main.detail.comment
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -29,6 +30,12 @@ class AddCommentFragment : Fragment(R.layout.fragment_add_comment) {
 
         btnShareReview.setOnClickListener {
             checkReviewData()
+        }
+
+        edtFullReview.doOnTextChanged { text, _, _, _ ->
+            text?.let {
+                tvCharReduce.text = (400 - text.length).toString()
+            }
         }
     }
 

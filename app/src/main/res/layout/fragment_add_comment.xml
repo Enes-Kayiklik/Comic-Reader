@@ -8,6 +8,8 @@
         android:id="@+id/edtNameSurname"
         style="@style/SubText"
         android:layout_width="0dp"
+        android:maxLength="15"
+        android:maxLines="1"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -23,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:progressTint="@color/colorDuskYellow"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -83,4 +86,12 @@
         android:text="İncelemenizi Yazın"
         app:layout_constraintStart_toStartOf="@+id/edtNameSurname"
         app:layout_constraintTop_toBottomOf="@+id/edtNameSurname" />
+
+    <TextView
+        android:id="@+id/tvCharReduce"
+        style="@style/SubText"
+        android:layout_marginBottom="2dp"
+        android:text="400"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
