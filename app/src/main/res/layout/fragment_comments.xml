@@ -65,5 +65,5 @@
         style="@style/TitleText"
         android:text="@string/reviews"
         android:layout_gravity="center|top"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="12dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

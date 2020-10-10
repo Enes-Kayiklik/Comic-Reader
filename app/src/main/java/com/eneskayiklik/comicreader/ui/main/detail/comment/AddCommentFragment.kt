@@ -37,6 +37,10 @@ class AddCommentFragment : Fragment(R.layout.fragment_add_comment) {
                 tvCharReduce.text = (400 - text.length).toString()
             }
         }
+
+        btnBackAddComment.setOnClickListener {
+            this.requireActivity().onBackPressed()
+        }
     }
 
     private fun checkReviewData() {

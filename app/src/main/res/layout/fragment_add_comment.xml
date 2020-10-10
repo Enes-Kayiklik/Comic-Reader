@@ -18,8 +18,8 @@
         android:maxLength="15"
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@+id/switchIsAnonim"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/btnBackAddComment"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackAddComment" />
 
     <androidx.appcompat.widget.AppCompatRatingBar
         android:id="@+id/ratingReview"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cardView" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/btnBackAddComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -117,8 +117,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_review"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/btBackAddComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/btnBackAddComment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

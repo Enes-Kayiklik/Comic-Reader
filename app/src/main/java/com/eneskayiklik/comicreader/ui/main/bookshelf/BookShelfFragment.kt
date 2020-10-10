@@ -3,6 +3,7 @@ package com.eneskayiklik.comicreader.ui.main.bookshelf
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
@@ -80,6 +81,20 @@ class BookShelfFragment : Fragment(R.layout.fragment_bookshelf) {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.search_menu, menu)
+        inflater.inflate(R.menu.bookshelf_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.orderByReview -> orderByReview()
+        }
+        return true
+    }
+
+    private fun orderByReview() {
+        if (this::bookList.isInitialized) {
+            adapter.bookList = bookList.sortedByDescending { it.rating }
+            adapter.notifyDataSetChanged()
+        }
     }
 }
