@@ -33,3 +33,16 @@
     ├── utils                 # Useful classes
     |
     └── ComicApplication.kt    # @HiltAndroidApp
+    
+<table style="width:100%">
+  <tr>
+    <th>Bookshelf Screen</th>
+    <th>Detail Screen</th>
+    <th>Review Screen</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/Screenshot_1602333815 (Phone).png"/></td>
+    <td><img src="screenshots/Screenshot_1602333932 (Phone).png"/></td>
+    <td><img src="screenshots/Screenshot_1602334283 (Phone).png"/></td>
+  </tr>
+</table>
