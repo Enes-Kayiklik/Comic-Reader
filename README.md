@@ -11,7 +11,7 @@
 - [Dagger - Hilt](https://dagger.dev/hilt/) - Dependency Injection Framework
 - [Firebase](https://firebase.google.com/) - for backend.
 - [Coil](https://github.com/coil-kt/coil) - Image loader library.
-- [Lottie](https://github.com/airbnb/lottie-android) - Image loader library.
+- [Lottie](https://github.com/airbnb/lottie-android) - Animation library.
 - [PRDownloader](https://github.com/MindorksOpenSource/PRDownloader) - A file downloader library for Android.
 - [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) - PDF Viewer Library with custom properties.
 
