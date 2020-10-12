@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -36,6 +37,10 @@ class BookShelfFragment : Fragment(R.layout.fragment_bookshelf) {
                 adapter.bookList = bookList.filter { it.name.contains(text ?: "", true) }
                 adapter.notifyDataSetChanged()
             }
+        }
+
+        btnDrawer.setOnClickListener {
+            drawerLayoutMain.openDrawer(GravityCompat.START)
         }
     }
 
