@@ -1,5 +1,8 @@
 # Comic-Reader
 
+### APK
+[![Comic Reader](https://img.shields.io/github/v/release/patilshreyas/covid19-notifier-in?color=%23FFFF&label=Download%20APK&logo=android)](https://github.com/Enes-Kayiklik/Comic-Reader/blob/master/apk/comic%20reader.apk?raw=true)
+
 ## Libraries 🛠
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - For asynchronous and more..
