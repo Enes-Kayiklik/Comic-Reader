@@ -1,73 +1,35 @@
 package com.eneskayiklik.comicreader.ui.main.read
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
-import android.util.Log
-import androidx.core.content.FileProvider
 import androidx.core.net.toUri
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.downloader.Error
-import com.downloader.OnDownloadListener
-import com.downloader.PRDownloader
-import com.downloader.Progress
-import com.eneskayiklik.comicreader.utils.Constants.PACKAGE_NAME
-import com.eneskayiklik.comicreader.utils.Variables.downloadCount
-import com.eneskayiklik.comicreader.utils.Variables.downloadingItems
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.eneskayiklik.comicreader.service.DownloadService
 import java.io.File
 
-class ReadBookViewModel @ViewModelInject constructor(
-    private val pdfPath: String
-) : ViewModel() {
-    private var _file = MutableLiveData<Uri>()
-    val file: LiveData<Uri>
-        get() = _file
-
-    private var _progress = MutableLiveData<Progress>()
-    val progress: LiveData<Progress>
-        get() = _progress
-
+class ReadBookViewModel : ViewModel() {
     fun getBookData(url: String, name: String, context: Context) {
-        val file = File("$pdfPath/$name.pdf")
-        if (!file.exists()) {
-            downloadPdf(url, name, context)
+        val pdfPath = context.getExternalFilesDir("Comic Books")?.absolutePath
+        val filePath = File("$pdfPath/$name.pdf")
+        if (!filePath.exists()) {
+            // If file not exist than start download service
+            Intent(context, DownloadService::class.java).apply {
+                putExtra("url", url)
+                putExtra("file_name", name)
+                context.startService(this)
+            }
         } else {
-            _file.postValue(file.toUri())
-        }
-    }
-
-    private fun downloadPdf(url: String, name: String, context: Context) {
-        downloadCount.postValue(downloadCount.value?.plus(1))
-        CoroutineScope(Dispatchers.IO).launch {
-            PRDownloader.download(url, pdfPath, "$name.pdf")
-                .build()
-                .setOnProgressListener { progress -> downloadingItems.postValue(mutableMapOf(name to progress)) }
-                .start(object : OnDownloadListener {
-                    override fun onDownloadComplete() {
-                        downloadCount.postValue(downloadCount.value?.minus(1))
-                        downloadingItems.value?.remove(name)
-                        val fileUri = FileProvider.getUriForFile(
-                            context,
-                            PACKAGE_NAME,
-                            File("$pdfPath/$name.pdf")
-                        )
-                        Log.e(TAG, "$fileUri")
-                        _file.postValue(fileUri)
-                    }
-
-                    override fun onError(error: Error?) {
-                        Log.e(TAG, "${error?.connectionException?.message}")
-                    }
-                })
+            file.postValue(filePath.toUri())
         }
     }
 
     companion object {
         const val TAG = "Read Book View Model"
+
+        // This is temporary solution.
+        // I declare like this because i wanna reach this variable inside download service.
+        val file = MutableLiveData<Uri>()
     }
 }

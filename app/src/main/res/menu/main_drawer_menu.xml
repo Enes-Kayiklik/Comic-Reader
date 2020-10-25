@@ -3,5 +3,5 @@
 
     <item
         android:id="@+id/firstItem"
-        android:title="First Item" />
+        android:title="Yapım Aşamasında" />
 </menu>

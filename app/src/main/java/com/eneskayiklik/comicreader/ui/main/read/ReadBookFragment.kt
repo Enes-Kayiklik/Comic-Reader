@@ -1,11 +1,13 @@
 package com.eneskayiklik.comicreader.ui.main.read
 
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.eneskayiklik.comicreader.R
+import com.eneskayiklik.comicreader.ui.main.read.ReadBookViewModel.Companion.file
+import com.eneskayiklik.comicreader.utils.Functions.calculateProgress
+import com.eneskayiklik.comicreader.utils.Functions.calculateProgressString
 import com.eneskayiklik.comicreader.utils.Functions.makeInvisible
 import com.eneskayiklik.comicreader.utils.Functions.makeVisible
 import com.eneskayiklik.comicreader.utils.Variables
@@ -18,7 +20,7 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
     private val redBookViewModel: ReadBookViewModel by viewModels()
 
     private fun setupObserver() {
-        redBookViewModel.file.observe(this.viewLifecycleOwner, Observer {
+        file.observe(this.viewLifecycleOwner, Observer {
             changeLayoutVisibilities()
             pdfView.fromUri(it)
                 .pageFling(true)
@@ -30,12 +32,10 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
         // Show user download progress
         Variables.downloadingItems.observe(this.viewLifecycleOwner, Observer { item ->
             item[navArgs.currentBook.name]?.let {
-                val totalPercent = ((it.currentBytes * 100) / it.totalBytes).toInt()
-                val currentByte = (it.currentBytes / 1_000_000).toInt()
-                val totalByte = (it.totalBytes / 1_000_000).toInt()
+                val totalPercent = it.calculateProgress()
                 progressBarDownloadState.progress = totalPercent
                 tvProcessPercent.text = "$totalPercent".plus(" %")
-                tvProcessPercentText.text = "$currentByte".plus(" mb / $totalByte mb")
+                tvProcessPercentText.text = it.calculateProgressString()
             }
         })
     }
@@ -43,7 +43,6 @@ class ReadBookFragment : Fragment(R.layout.fragment_read_book) {
     private fun changeLayoutVisibilities() {
         loadingViewRead.makeInvisible()
         containerViewRead.makeVisible()
-        Log.e("Read Book VM", "changeLayoutVisibilities")
     }
 
     override fun onStart() {

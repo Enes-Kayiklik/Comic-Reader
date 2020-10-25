@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import com.eneskayiklik.comicreader.R
 import com.eneskayiklik.comicreader.ui.main.read.ReadBookViewModel
+import com.eneskayiklik.comicreader.ui.main.read.ReadBookViewModel.Companion.file
 import com.eneskayiklik.comicreader.utils.Functions.makeInvisible
 import com.eneskayiklik.comicreader.utils.Functions.makeVisible
 import com.eneskayiklik.comicreader.utils.Variables.downloadingItems
@@ -65,7 +66,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     private fun setupObserver() {
         // This method call when download on complete
-        redBookViewModel.file.observe(this.viewLifecycleOwner, Observer {
+        file.observe(this.viewLifecycleOwner, Observer {
             isDownloading = false
             Toast.makeText(
                 this.requireContext(),
