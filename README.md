@@ -26,6 +26,7 @@
     ├── di                    # Dependency Injection 
     ├── model                 # Model classes
     ├── network               # For API Service.
+    ├── service               # Service Files (Download Service etc.)
     ├── ui                    # Activity
     |    ├── favorite           
     |    |               
@@ -47,6 +48,15 @@
     <td><img src="screenshots/Screenshot_1602333815 (Phone).png"/></td>
     <td><img src="screenshots/Screenshot_1602333932 (Phone).png"/></td>
     <td><img src="screenshots/Screenshot_1602334283 (Phone).png"/></td>
+  </tr>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <th>Download Notificaiton</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/Screenshot_1603613443 (Phone).png"/></td>
   </tr>
 </table>
 
